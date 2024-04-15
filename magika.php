@@ -54,11 +54,12 @@ function uploadAndExecuteCommand($target_dir, $uploaded_file_name)
         echo "<div class='success'>The file " . htmlspecialchars(basename($uploaded_file_name)) . " has been uploaded.</div>";
 
         // Execute the command this works with Linux (Debian) servers
-        $command = "/usr/local/bin/magika $target_dir/*";
+        $command = "/usr/local/bin/magika \"$target_dir/$uploaded_file_name\"";
         $result = shell_exec($command);
         //Output in JSON format
-        $command_json = "/usr/local/bin/magika --json $target_dir/*";
+        $command_json = "/usr/local/bin/magika --json \"$target_dir/$uploaded_file_name\"";
         $result_json = shell_exec($command_json);
+
 
         // Remove the uploaded file to prevent
         unlink($target_file);
