@@ -42,4 +42,4 @@ post_max_size = 15M
 /etc/init.d/apache2 restart
 
 # Additionally, make Size changes inside:
-nano /var/www/html/uploads/magika.php
+nano /var/www/html/magika.php
